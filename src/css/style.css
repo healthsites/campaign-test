@@ -1,0 +1,135 @@
+/* @import url(customfont-url) */
+
+:root {
+	--dark: hwb(345 12% 86%);
+	--light: hwb(300 92% 8%);
+	--spacer-1: 0.25rem;
+	--spacer-2: 0.5rem;
+	--spacer-3: 1rem;
+
+	--background: var(--light);
+	--foreground: var(--dark);
+
+	--link-color: hwb(212 16% 0%);
+	--border-radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--dark);
+		--foreground: var(--light);
+		--link-color: hwb(200 100% 50%);
+	}
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html {
+	font-family: sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	display: grid;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background);
+	color: var(--foreground);
+	min-block-size: 100%;
+	min-height: 100dvh;
+
+	> div {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--spacer-3);
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header,
+main,
+footer {
+	grid-column: span 4;
+	grid-template-columns: subgrid;
+	padding-inline: var(--spacer-3);
+	padding-block: 0.5rem;
+
+	@media screen and (min-width: 768px) {
+		grid-column: 2 / 12;
+	}
+}
+
+main {
+	display: grid;
+	grid-template-columns: subgrid;
+
+	> img {
+		color: var(--foreground);
+		max-inline-size: 100%;
+		height: auto;
+	}
+}
+
+a {
+	color: var(--link-color);
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	gap: var(--spacer-3);
+}
+
+form {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacer-3);
+
+	label {
+		display: block;
+	}
+
+	input,
+	textarea {
+		max-inline-size: 100%;
+		font-size: 1.1rem;
+	}
+}
+
+main > form,
+main > section {
+	grid-column: span 4;
+	@media screen and (min-width: 768px) {
+		grid-column: 2 / 10;
+	}
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+	background-color: var(--link-color);
+	color: var(--background);
+	display: inline-block;
+	border: 0;
+	padding: var(--spacer-2) var(--spacer-3);
+	cursor: pointer;
+	border-radius: var(--border-radius);
+	font-size: 1.1rem;
+}
+
+#jokes {
+	clear: both;
+	padding-block: var(--spacer-3);
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Vase</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="Canvas" />
+		<meta name="description" content="🙂" />
+		<meta name="view-transition" content="same-origin" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<script src="/js/index.js" type="module"></script>
+	</head>
+	<body>
+		<div>
+			<header>
+				<a href="/">Vase</a>
+				<nav>
+					<a href="/">Home</a>
+					<a href="/contact/">Contact</a>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<div
+						class="jokes"
+						hx-get="https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode"
+						hx-target="#jokes"
+						hx-swap="innerHTML"
+					>
+						<button>Joke</button>
+					</div>
+
+					<div id="jokes"></div>
+				</section>
+			</main>
+			<footer>
+				<a href="#">About</a>
+			</footer>
+		</div>
+	</body>
+</html>

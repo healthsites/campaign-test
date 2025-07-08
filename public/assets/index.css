@@ -1,0 +1,36 @@
+/* @import url() */
+
+:root {
+	--dark: hsl(345, 6%, 13%);
+	--light: hsl(300, 2%, 92%);
+
+	--background: var(--light);
+	--foreground: var(--dark);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--dark);
+		--foreground: var(--light);
+	}
+}
+
+html {
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--background);
+	color: var(--foreground);
+	min-block-size: 100%;
+	min-height: 100dvh;
+	place-content: center;
+	display: grid;
+}
+
+body > * {
+		grid-area: 1/1;
+	}

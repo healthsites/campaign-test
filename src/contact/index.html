@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Contact - Vase</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="Canvas" />
+		<meta name="description" content="🙂" />
+		<meta name="view-transition" content="same-origin" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<script src="/js/index.js" type="module"></script>
+	</head>
+	<body>
+		<div>
+			<header>
+				<a href="/">Vase</a>
+				<nav>
+					<a href="/">Home</a>
+					<a href="/contact/">Contact</a>
+				</nav>
+			</header>
+			<main>
+				<form action="/contact/" method="post">
+					<div>
+						<label for="name">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							size="20"
+							required
+						/>
+					</div>
+
+					<div>
+						<label for="email">Email:</label>
+						<input
+							type="email"
+							size="25"
+							id="email"
+							name="email"
+							required
+						/>
+					</div>
+
+					<div>
+						<button type="submit">Send</button>
+					</div>
+				</form>
+			</main>
+			<footer>
+				<a href="#">About</a>
+			</footer>
+		</div>
+	</body>
+</html>

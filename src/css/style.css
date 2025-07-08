@@ -2,7 +2,7 @@
 
 :root {
 	--dark: hwb(345 12% 86%);
-	--light: hwb(300 92% 8%);
+	--light: white;
 	--spacer-1: 0.25rem;
 	--spacer-2: 0.5rem;
 	--spacer-3: 1rem;
@@ -10,7 +10,7 @@
 	--background: var(--light);
 	--foreground: var(--dark);
 
-	--link-color: hwb(212 16% 0%);
+	--link-color: red;
 	--border-radius: 0.25rem;
 }
 

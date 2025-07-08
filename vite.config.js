@@ -16,14 +16,8 @@ export default defineConfig({
 				contact: resolve(__dirname, "contact.html"),
 			},
 			output: {
-				entryFileNames: [
-					`js/[name].js`,
-					`../node_modules/htmx.org/dist/htmx.min.js`,
-				],
-				chunkFileNames: [
-					`js/[name].js`,
-					`../node_modules/htmx.org/dist/htmx.min.js`,
-				],
+				entryFileNames: `js/[name].js`,
+				chunkFileNames:	`js/[name].js`,
 				assetFileNames: "css/[name].css",
 			},
 		},
